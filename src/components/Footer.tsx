@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowUp, FileText } from 'lucide-react';
 import { LinkedInIcon } from './icons/LinkedInIcon';
+import { GithubIcon } from './icons/GithubIcon';
 import { profileData } from '../data/profile';
 
 interface FooterProps {
@@ -38,6 +39,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume }) => {
               <FileText className="w-3.5 h-3.5 text-cyan-400" />
               <span>Verified Resume</span>
             </button>
+
+            <a
+              href={profileData.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3.5 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-xs font-mono-code text-slate-300 hover:text-white flex items-center gap-1.5"
+            >
+              <GithubIcon className="w-3.5 h-3.5 text-slate-300" />
+              <span>GitHub</span>
+            </a>
 
             <a
               href={profileData.linkedin}

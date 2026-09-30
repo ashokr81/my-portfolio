@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { profileData } from '../data/profile';
 import { Mail, Phone, MapPin, Send, CheckCircle2, ArrowUpRight } from 'lucide-react';
 import { LinkedInIcon } from './icons/LinkedInIcon';
+import { GithubIcon } from './icons/GithubIcon';
 import { triggerConfetti } from '../utils/confetti';
 
 interface ContactSectionProps {
@@ -114,6 +115,27 @@ export const ContactSection: React.FC<ContactSectionProps> = () => {
                   {copiedPhone ? 'Copied!' : 'Copy'}
                 </button>
               </div>
+
+              {/* GitHub */}
+              <a
+                href={profileData.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-xl bg-white/[0.02] border border-white/10 hover:border-cyan-500/40 transition-all flex items-center justify-between group cursor-pointer"
+              >
+                <div className="flex items-center gap-3.5">
+                  <div className="w-10 h-10 rounded-lg bg-slate-800/60 border border-slate-700/50 flex items-center justify-center text-slate-200">
+                    <GithubIcon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-mono-code text-slate-400 uppercase">GitHub Profile</span>
+                    <div className="text-sm font-semibold text-white group-hover:text-cyan-300">
+                      {profileData.githubDisplay}
+                    </div>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-cyan-300 transition-colors" />
+              </a>
 
               {/* LinkedIn */}
               <a

@@ -14,6 +14,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import { LinkedInIcon } from './icons/LinkedInIcon';
+import { GithubIcon } from './icons/GithubIcon';
 import { profileData } from '../data/profile';
 import { triggerConfetti } from '../utils/confetti';
 
@@ -176,6 +177,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               >
                 <LinkedInIcon className="w-3.5 h-3.5 text-cyan-400" />
                 <span>{profileData.linkedinDisplay}</span>
+              </a>
+
+              <a
+                href={profileData.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 hover:text-cyan-300 transition-colors"
+              >
+                <GithubIcon className="w-3.5 h-3.5 text-slate-300" />
+                <span>{profileData.githubDisplay}</span>
               </a>
 
               <button

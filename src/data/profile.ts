@@ -11,6 +11,7 @@ export interface Profile {
   linkedin: string;
   linkedinDisplay: string;
   github: string;
+  githubDisplay: string;
   status: string;
   experienceYearsEnterprise: number;
   experienceYearsFreelance: number;
@@ -32,7 +33,8 @@ export const profileData: Profile = {
   phone: "+91 7287071050",
   linkedin: "https://linkedin.com/in/ashok-r-7bbab2242",
   linkedinDisplay: "linkedin.com/in/ashok-r-7bbab2242",
-  github: "https://github.com",
+  github: "https://github.com/ashokr81",
+  githubDisplay: "github.com/ashokr81",
   status: "Available for Senior & Lead Engineering Roles",
   experienceYearsEnterprise: 4,
   experienceYearsFreelance: 4,
