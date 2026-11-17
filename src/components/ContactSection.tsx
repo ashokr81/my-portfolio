@@ -61,7 +61,7 @@ export const ContactSection: React.FC<ContactSectionProps> = () => {
             </h2>
 
             <p className="text-base text-slate-300 leading-relaxed max-w-xl">
-              Currently open to discussions regarding <strong className="text-white">Engineering Team Lead</strong>, <strong className="text-cyan-400">Senior Full Stack Developer</strong>, and <strong className="text-indigo-300">Mobile Systems Architect</strong> roles. Whether you need to scale existing backend latency, architect an offline-first IoT engine, or guide a cross-functional squad to delivery, let's talk.
+              Currently open to <strong className="text-white">Full Stack Developer</strong> and <strong className="text-cyan-400">Payments Engineering</strong> roles, including remote positions. Whether you need Stripe or Razorpay integrated properly, a Node.js backend scaled, or AI features shipped into production, let's talk.
             </p>
 
             {/* Direct Contact Cards */}
@@ -242,7 +242,7 @@ export const ContactSection: React.FC<ContactSectionProps> = () => {
                     </label>
                     <input
                       type="text"
-                      placeholder="e.g. Lead Full Stack Developer Opportunity / Project Inquiry"
+                      placeholder="e.g. Full Stack Developer (Payments) Opportunity"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 focus:border-cyan-400 text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-colors"

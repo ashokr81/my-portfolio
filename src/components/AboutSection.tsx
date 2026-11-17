@@ -6,7 +6,7 @@ import {
   Database,
   Radio,
   Cpu,
-  Users,
+  CreditCard,
   CheckCircle2,
   Terminal,
 } from 'lucide-react';
@@ -15,6 +15,17 @@ export const AboutSection: React.FC = () => {
   const [activeDomain, setActiveDomain] = useState<number>(0);
 
   const lifecycleDomains = [
+    {
+      title: 'Payment Engineering',
+      icon: CreditCard,
+      tech: 'Stripe • Razorpay • Webhooks • PostgreSQL ledgers',
+      summary: 'Integrating payment gateways end to end: server-side orders, SDK checkout, verified webhooks, failure handling, refunds and reconciliation-ready records.',
+      capabilities: [
+        'Stripe and Razorpay live in the CivilBook apps (100K+ downloads) and Kingresearch Academy',
+        'Signature-verified, idempotent webhook handlers with safe retries',
+        'Commission payouts and audit-logged financial records in the admin CRM',
+      ],
+    },
     {
       title: 'Mobile Engineering',
       icon: Smartphone,
@@ -40,10 +51,10 @@ export const AboutSection: React.FC = () => {
     {
       title: 'Backend & APIs',
       icon: Server,
-      tech: 'Node.js • Express.js • Cron Modules • Schedulers',
+      tech: 'Node.js • Express.js • TypeScript • BullMQ • Redis',
       summary: 'Developing stateless REST APIs, asynchronous task queues, and fault-tolerant cron jobs executing high-frequency aggregations.',
       capabilities: [
-        '35% reduction in API response latency through query restructuring',
+        '40% faster primary API responses by moving heavy jobs to BullMQ + Redis queues',
         'Asynchronous cron modules for automated scheduled reporting',
         'JWT authentication, rate limiting, and defensive input validation',
       ],
@@ -78,18 +89,7 @@ export const AboutSection: React.FC = () => {
       capabilities: [
         'Automated CI/CD workflows for linting, test suites, and staging deploys',
         'AWS EC2 microservice hosting with Nginx reverse proxy configuration',
-        'Unified debugging patterns slashing production delivery loops by 15%',
-      ],
-    },
-    {
-      title: 'Engineering Leadership',
-      icon: Users,
-      tech: '6-Engineer Team Lead • Architecture Standards • Code Reviews',
-      summary: 'Leading a 6-person cross-functional engineering team at Fugen Webtech, guiding architecture, review standards, and sprint deliveries.',
-      capabilities: [
-        'Direct command of cross-functional mobile, web, and backend engineers',
-        'Standardized Clean Architecture and MVVM scaffolding across codebases',
-        'Uniform code review metrics focused on performance and reliability',
+        'Docker containers and environment configs across dev, staging and production',
       ],
     },
   ];

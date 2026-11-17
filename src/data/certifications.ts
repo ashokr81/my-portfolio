@@ -21,23 +21,16 @@ export const educationData: EducationItem = {
   field: "Electronics & Communication Engineering",
   institution: "RGUKT-IIIT, Srikakulam",
   period: "2019 – 2023",
-  grade: "9.3 / 10",
+  grade: "9.0 / 10",
   gradeLabel: "CGPA",
   highlights: [
     "Rigorous grounding in computer systems, signal processing, digital electronics, and network protocols.",
-    "Academic excellence securing a top tier 9.3 / 10 CGPA across four years.",
+    "Academic excellence securing a 9.0 / 10 CGPA across four years.",
     "Led technical software projects and algorithmic design initiatives throughout university.",
   ],
 };
 
 export const certificationsData: CertificationItem[] = [
-  {
-    name: "Flutter with Node.js",
-    issuer: "Udemy",
-    credentialType: "Professional Certification",
-    verificationBadge: "Full-Stack Mobile & API",
-    focus: "Full-stack mobile integration connecting Flutter client apps to Node.js backend services and REST APIs.",
-  },
   {
     name: "MERN Stack Development",
     issuer: "CCBP",
@@ -46,10 +39,17 @@ export const certificationsData: CertificationItem[] = [
     focus: "Modern web architecture, React.js component lifecycle, Node.js/Express APIs, and database modeling.",
   },
   {
-    name: "Firebase with Flutter",
+    name: "Node.js & Microservices Architecture",
     issuer: "Udemy",
     credentialType: "Professional Certification",
-    verificationBadge: "Cloud & Realtime",
-    focus: "Cloud Firestore, Firebase Authentication, Cloud Messaging (FCM), and offline-first mobile sync.",
+    verificationBadge: "Backend & Services",
+    focus: "Service decomposition, REST API design, messaging and resilient Node.js microservices.",
+  },
+  {
+    name: "Full Stack Web Development & Cloud",
+    issuer: "AWS",
+    credentialType: "Professional Certification",
+    verificationBadge: "Cloud",
+    focus: "Deploying full-stack applications on AWS with EC2, S3 and RDS.",
   },
 ];

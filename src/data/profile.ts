@@ -22,12 +22,12 @@ export interface Profile {
 
 export const profileData: Profile = {
   name: "Ashok Rongali",
-  role: "Senior Full Stack Developer",
-  specialization: "Flutter Specialist",
-  leadership: "Engineering Team Lead",
-  tagline: "I build and lead production-grade mobile, web and backend systems.",
+  role: "Full Stack Engineer",
+  specialization: "Payment Integrations",
+  leadership: "MERN · Agentic AI",
+  tagline: "I build production web and mobile platforms where money moves safely, from checkout to webhook to ledger.",
   summary:
-    "High-impact Senior Full Stack Mobile Developer and Engineering Team Lead with 4 years of enterprise and 4+ years of freelance experience delivering high-performance cross-platform architectures. Currently heading a 6-member cross-functional engineering team at Fugen Webtech, controlling core technical design, database scaling, and production delivery. Proven record of launching 6+ complex apps across FinTech, IoT, Agriculture, and E-commerce landscapes, collectively powering 10K to 50K+ production downloads.",
+    "Full Stack MERN & Agentic AI developer with 3.5+ years of professional experience and freelance work since 2020. I have integrated Stripe and Razorpay into almost every product I have shipped, including the CivilBook marketplace apps with 100K+ downloads. I build Node.js/Express backends on PostgreSQL and MongoDB, React admin platforms, real-time WebSocket systems and LLM features with OpenAI, Claude and Gemini.",
   location: "Visakhapatnam, India",
   email: "rongalaashok25@gmail.com",
   phone: "+91 7287071050",
@@ -35,12 +35,12 @@ export const profileData: Profile = {
   linkedinDisplay: "linkedin.com/in/ashok-r-7bbab2242",
   github: "https://github.com/ashokr81",
   githubDisplay: "github.com/ashokr81",
-  status: "Available for Senior & Lead Engineering Roles",
-  experienceYearsEnterprise: 4,
+  status: "Open to Full Stack & Payments Engineering Roles",
+  experienceYearsEnterprise: 3.5,
   experienceYearsFreelance: 4,
   engineersLed: 6,
   productionApps: 6,
-  downloadsCount: "10K to 50K+",
+  downloadsCount: "200K+",
 };
 
 export interface DnaPillar {

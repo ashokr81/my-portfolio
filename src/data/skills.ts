@@ -1,6 +1,6 @@
 export interface SkillItem {
   name: string;
-  category: "Mobile" | "Frontend" | "Backend" | "Real-Time" | "Databases" | "Cloud & DevOps" | "Architecture" | "AI Integration";
+  category: "Payments" | "Mobile" | "Frontend" | "Backend" | "Real-Time" | "Databases" | "Cloud & DevOps" | "Architecture" | "AI Integration";
   context: string;
   isPrimary?: boolean;
   proficiencyLevel: "Core Specialist" | "Advanced" | "Proficient";
@@ -8,6 +8,7 @@ export interface SkillItem {
 
 export const skillsCategories = [
   "All",
+  "Payments",
   "Mobile",
   "Frontend",
   "Backend",
@@ -21,6 +22,40 @@ export const skillsCategories = [
 export type SkillCategory = (typeof skillsCategories)[number];
 
 export const skillsData: SkillItem[] = [
+  // Payments
+  {
+    name: "Stripe",
+    category: "Payments",
+    isPrimary: true,
+    proficiencyLevel: "Core Specialist",
+    context: "Payment Intents, mobile SDK checkout, signed webhooks and refunds in the CivilBook marketplace apps and admin CRM.",
+  },
+  {
+    name: "Razorpay",
+    category: "Payments",
+    isPrimary: true,
+    proficiencyLevel: "Core Specialist",
+    context: "Orders API, checkout SDK, HMAC signature verification and subscriptions across CivilBook and Kingresearch Academy.",
+  },
+  {
+    name: "Payment Webhooks",
+    category: "Payments",
+    proficiencyLevel: "Core Specialist",
+    context: "Signature-verified, idempotent webhook handlers with retries that drive booking and subscription state.",
+  },
+  {
+    name: "Transaction Lifecycle",
+    category: "Payments",
+    proficiencyLevel: "Advanced",
+    context: "Order creation, authorization, capture, failure handling, refunds and reconciliation-ready ledgers in PostgreSQL.",
+  },
+  {
+    name: "Payment Security",
+    category: "Payments",
+    proficiencyLevel: "Advanced",
+    context: "No raw card storage, server-trusted amounts, secrets in env config, RBAC and audit logs on financial records.",
+  },
+
   // Mobile
   {
     name: "Flutter",
@@ -139,7 +174,7 @@ export const skillsData: SkillItem[] = [
     category: "Databases",
     isPrimary: true,
     proficiencyLevel: "Core Specialist",
-    context: "Relational database refactored via defensive indexing and optimized subqueries, securing a 35% reduction in API response latency.",
+    context: "Multi-tenant schemas, PostGIS radius search, transaction ledgers for payments, and Prisma; subquery refactors cut server response cycles by 20%.",
   },
   {
     name: "MySQL",
@@ -220,11 +255,11 @@ export const skillsData: SkillItem[] = [
     context: "Defensive indexing, composite indexes, query plan EXPLAIN execution analysis, and elimination of N+1 subqueries.",
   },
   {
-    name: "Engineering Leadership",
+    name: "Multi-Tenant Architecture",
     category: "Architecture",
     isPrimary: true,
     proficiencyLevel: "Core Specialist",
-    context: "Heading a 6-member engineering team, establishing architecture standards, uniform code review metrics, and sprint delivery.",
+    context: "Tenant schema isolation, granular RBAC and audit logging across financial records in the Civilbook Admin CRM.",
   },
 
   // AI Integration

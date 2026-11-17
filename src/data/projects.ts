@@ -49,6 +49,8 @@ export const featuredProjects: ProjectCaseStudy[] = [
       "Firebase",
       "Google Maps API",
       "WebSockets",
+      "Stripe",
+      "Razorpay",
     ],
     subsystems: [
       {
@@ -87,6 +89,14 @@ export const featuredProjects: ProjectCaseStudy[] = [
           "Implemented reactive Google Maps geometric radius filtering dynamically scoping available providers within a configurable 30–60 km radius.",
           "Architected asynchronous background location streaming in Flutter, balancing precise geo-coordinate telemetry with mobile battery preservation.",
           "Optimized PostgreSQL spatial queries to prevent full-table scans during high-frequency provider proximity lookups.",
+        ],
+      },
+      {
+        title: "Stripe & Razorpay Payment Integration",
+        points: [
+          "Integrated Stripe and Razorpay in both the User and Provider apps: bookings, service payments and provider subscription plans.",
+          "Orders and payment intents created server-side only; payments confirmed through verified webhook signatures, never from the client.",
+          "Idempotent webhook processing, failure handling with safe retries, and transaction records kept consistent in PostgreSQL for commission payouts and reconciliation in the admin CRM.",
         ],
       },
       {

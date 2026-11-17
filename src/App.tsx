@@ -2,78 +2,61 @@ import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ProofMetrics } from './components/ProofMetrics';
+import { TechMarquee } from './components/TechMarquee';
+import { PaymentsSection } from './components/PaymentsSection';
+import { PlayStoreApps } from './components/PlayStoreApps';
 import { AboutSection } from './components/AboutSection';
-import { EngineeringDna } from './components/EngineeringDna';
 import { ExperienceTimeline } from './components/ExperienceTimeline';
 import { FeaturedProjects } from './components/FeaturedProjects';
 import { ArchitectureLab } from './components/ArchitectureLab';
-import { TechStackSection } from './components/TechStackSection';
-import { LeadershipSection } from './components/LeadershipSection';
-import { PerformanceSection } from './components/PerformanceSection';
 import { AiSection } from './components/AiSection';
+import { TechStackSection } from './components/TechStackSection';
 import { CredentialsSection } from './components/CredentialsSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ResumeModal } from './components/ResumeModal';
+import { Reveal, ScrollProgress } from './components/motion';
 
 export function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const openResume = () => setIsResumeOpen(true);
 
   return (
     <div className="min-h-screen bg-[#07090e] text-slate-100 flex flex-col selection:bg-cyan-500/30 selection:text-cyan-200">
-      {/* Top Sticky Navigation */}
-      <Navbar onOpenResume={() => setIsResumeOpen(true)} />
+      <ScrollProgress />
+      <Navbar onOpenResume={openResume} />
 
-      {/* Main Content Sections */}
       <main className="flex-1 w-full">
-        {/* Hero Section */}
-        <Hero onOpenResume={() => setIsResumeOpen(true)} />
+        {/* Hero with live payment-lifecycle console */}
+        <Hero onOpenResume={openResume} />
 
-        {/* Above-The-Fold Verified Metrics */}
+        {/* Tech ribbon */}
+        <TechMarquee />
+
+        {/* Animated impact metrics */}
         <ProofMetrics />
 
-        {/* About: Engineer Behind the System */}
-        <AboutSection />
+        {/* Payment engineering: Stripe, Razorpay, lifecycle, safety practices */}
+        <PaymentsSection />
 
-        {/* Engineering DNA */}
-        <EngineeringDna />
+        {/* Six apps live on Google Play */}
+        <PlayStoreApps />
 
-        {/* Vertical Career Experience Timeline */}
-        <ExperienceTimeline />
+        <Reveal><AboutSection /></Reveal>
+        <Reveal><ExperienceTimeline /></Reveal>
 
-        {/* Featured Case Studies: Civilbook, KingResearch, Peepul Agri */}
-        <FeaturedProjects />
-
-        {/* Signature Architecture Lab: How I Think About Systems */}
-        <ArchitectureLab />
-
-        {/* Categorized Tech Stack */}
-        <TechStackSection />
-
-        {/* Engineering Leadership */}
-        <LeadershipSection />
-
-        {/* Performance Engineering */}
-        <PerformanceSection />
-
-        {/* AI Integration */}
-        <AiSection />
-
-        {/* Education & Certifications */}
-        <CredentialsSection />
-
-        {/* Professional Contact & Call to Action */}
-        <ContactSection onOpenResume={() => setIsResumeOpen(true)} />
+        {/* Deep-dive case studies: Civilbook, KingResearch, Peepul Agri */}
+        <Reveal><FeaturedProjects /></Reveal>
+        <Reveal><ArchitectureLab /></Reveal>
+        <Reveal><AiSection /></Reveal>
+        <Reveal><TechStackSection /></Reveal>
+        <Reveal><CredentialsSection /></Reveal>
+        <Reveal><ContactSection onOpenResume={openResume} /></Reveal>
       </main>
 
-      {/* Footer */}
-      <Footer onOpenResume={() => setIsResumeOpen(true)} />
+      <Footer onOpenResume={openResume} />
 
-      {/* Resume Document Modal */}
-      <ResumeModal
-        isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
-      />
+      <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </div>
   );
 }

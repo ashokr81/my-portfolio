@@ -18,15 +18,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
       const sections = [
         'hero',
         'metrics',
+        'payments',
+        'apps',
         'about',
-        'dna',
         'experience',
         'projects',
         'architecture',
-        'skills',
-        'leadership',
-        'performance',
         'ai',
+        'skills',
         'credentials',
         'contact',
       ];
@@ -50,13 +49,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
   }, []);
 
   const navLinks = [
+    { label: 'Payments', href: '#payments' },
+    { label: 'Apps', href: '#apps' },
     { label: 'About', href: '#about' },
     { label: 'Experience', href: '#experience' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Architecture', href: '#architecture' },
+    { label: 'Case Studies', href: '#projects' },
+    { label: 'AI', href: '#ai' },
     { label: 'Skills', href: '#skills' },
-    { label: 'Leadership', href: '#leadership' },
-    { label: 'Impact', href: '#performance' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -87,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
               </span>
               <div className="flex items-center gap-1.5 text-xs text-slate-400">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="truncate hidden sm:inline">Lead & Senior Roles</span>
+                <span className="truncate hidden sm:inline">Full Stack · Payments</span>
                 <span className="sm:hidden">Available</span>
               </div>
             </div>

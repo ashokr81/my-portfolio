@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { verifiedMetrics } from '../data/metrics';
 import type { Metric } from '../data/metrics';
 import { CheckCircle, Info } from 'lucide-react';
+import { CountUp, Stagger, StaggerItem, SpotlightCard } from './motion';
 
 export const ProofMetrics: React.FC = () => {
   const [selectedMetric, setSelectedMetric] = useState<Metric | null>(null);
   const [filterCategory, setFilterCategory] = useState<string>('All');
 
-  const categories = ['All', 'Performance', 'Leadership', 'Scale', 'Velocity'];
+  const categories = ['All', 'Payments', 'Scale', 'Performance', 'Experience'];
 
   const filteredMetrics = filterCategory === 'All'
     ? verifiedMetrics
@@ -21,13 +22,13 @@ export const ProofMetrics: React.FC = () => {
           <div>
             <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-cyan-950/60 border border-cyan-800/40 text-[11px] font-mono-code text-cyan-400 mb-2">
               <CheckCircle className="w-3 h-3 text-cyan-400" />
-              VERIFIED ENGINEERING PROOF
+              PRODUCTION RESULTS
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-              Production-Verified Quantitative Impact
+              Impact in numbers
             </h2>
             <p className="text-sm text-slate-400 mt-1 max-w-xl">
-              Concrete performance, leadership, and delivery metrics verified from enterprise and freelance systems.
+              Play Store reach, payment coverage and performance results from production systems.
             </p>
           </div>
 
@@ -50,12 +51,13 @@ export const ProofMetrics: React.FC = () => {
         </div>
 
         {/* Metrics Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <Stagger key={filterCategory} className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6" gap={0.06}>
           {filteredMetrics.map((metric) => (
+            <StaggerItem key={metric.id} className="h-full">
+            <SpotlightCard className="h-full rounded-2xl">
             <div
-              key={metric.id}
               onClick={() => setSelectedMetric(selectedMetric?.id === metric.id ? null : metric)}
-              className="group relative p-5 sm:p-6 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.08] hover:border-cyan-500/30 transition-all duration-200 cursor-pointer flex flex-col justify-between"
+              className="group relative h-full p-5 sm:p-6 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.08] hover:border-cyan-500/30 transition-all duration-200 cursor-pointer flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between text-xs text-slate-400 mb-2">
@@ -67,9 +69,13 @@ export const ProofMetrics: React.FC = () => {
                   </span>
                 </div>
 
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-mono-code text-white group-hover:text-cyan-300 transition-colors">
-                  {metric.value}
-                </div>
+                <CountUp
+                  to={metric.value}
+                  decimals={metric.decimals}
+                  prefix={metric.prefix}
+                  suffix={metric.suffix}
+                  className={`block text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-mono-code text-white group-hover:text-cyan-300 transition-colors`}
+                />
 
                 <h3 className="text-sm font-semibold text-slate-200 mt-2 leading-snug">
                   {metric.label}
@@ -86,8 +92,10 @@ export const ProofMetrics: React.FC = () => {
                 </div>
               </div>
             </div>
+            </SpotlightCard>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
 
         {/* Metric Detail Drawer / Card when clicked */}
         {selectedMetric && (
@@ -95,7 +103,7 @@ export const ProofMetrics: React.FC = () => {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <span className="text-2xl font-mono-code font-bold text-cyan-400">
-                  {selectedMetric.value}
+                  {selectedMetric.prefix}{selectedMetric.value}{selectedMetric.suffix}
                 </span>
                 <div>
                   <h4 className="text-base font-bold text-white">

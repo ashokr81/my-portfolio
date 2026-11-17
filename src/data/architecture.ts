@@ -23,10 +23,10 @@ export const systemArchitectureModels: SystemModel[] = [
   {
     id: "arch-relational-scale",
     title: "High-Throughput Mobile API & Defensive Relational Indexing",
-    tagline: "Architecture behind the 35% API latency drop across production endpoints.",
+    tagline: "Architecture behind fast, index-backed production endpoints.",
     badge: "Scale & Performance",
     description:
-      "A battle-tested client-to-database architectural flow featuring defensive indexing, subquery elimination, and connection pooling that reduced API latency by 35% under peak loads.",
+      "A battle-tested client-to-database architectural flow featuring defensive indexing, subquery elimination, and connection pooling that keep API latency low under peak loads.",
     nodes: [
       {
         id: "node-client",
@@ -72,7 +72,7 @@ export const systemArchitectureModels: SystemModel[] = [
     flowDescription: [
       "Client requests dispatch through rate-limited Express middleware with sanitized payloads.",
       "Optimized query plans utilize composite indexes matching query filter cardinality.",
-      "Result sets stream back with 35% lower round-trip latency.",
+      "Result sets stream back with low round-trip latency.",
     ],
   },
   {
